@@ -7,11 +7,11 @@ use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model implements TranslatableContract
+class Tag extends Model implements TranslatableContract
 {
     use HasFactory, Translatable;
 
+    public array $translatedAttributes = ['title'];
 
-    public array $translatedAttributes = ['title', 'content', 'smallDesc'];
-    protected $fillable = ['user_id'];
+    protected $fillable = ['post_id'];
 }
